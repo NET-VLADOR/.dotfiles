@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+Thumbs.db
+
+.config/tmux/plugins/
+.config/noctalia/plugins/
+
+node_modules/
+vendor/

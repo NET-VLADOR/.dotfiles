@@ -1,0 +1,25 @@
+input {
+    keyboard {
+        repeat-rate 35
+        repeat-delay 200
+
+        xkb {
+            layout "us,ru"
+            options "grp:alt_shift_toggle,ctrl:nocaps"
+        }
+        numlock
+    }
+    touchpad {
+        tap 
+        natural-scroll
+    }
+
+    mouse {
+    }
+
+    trackpoint {
+    }
+
+    warp-mouse-to-focus
+    focus-follows-mouse
+}

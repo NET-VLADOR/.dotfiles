@@ -1,0 +1,40 @@
+layer-rule {
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
+}
+
+window-rule {
+    match app-id=r#"zen$"# title="^Picture-in-Picture$"
+    open-floating true
+}
+
+window-rule {
+    geometry-corner-radius 10
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id="zen"
+    open-on-workspace "  "
+}
+
+window-rule {
+    match app-id="kitty"
+    open-on-workspace "  "
+}
+
+window-rule {
+    match app-id="org.telegram.desktop"
+    match app-id="AmneziaVPN"
+    
+    open-on-workspace "  "
+
+    block-out-from "screen-capture"
+}
+
+window-rule {
+    match app-id="YandexMusic"
+
+    open-fullscreen true   
+    open-on-workspace "  "
+}

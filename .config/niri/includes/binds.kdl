@@ -1,0 +1,154 @@
+binds {
+    Mod+Shift+Slash hotkey-overlay-title="Показать шпаргалку по горячим клавишам" { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
+
+    Mod+T hotkey-overlay-title="Открыть терминал: Kitty" { spawn "kitty"; }
+    Mod+B hotkey-overlay-title="Открыть браузер: Zen Browser" { spawn "zen-browser"; }
+    Alt+Space hotkey-overlay-title="Открыть лаунчер" { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+    Ctrl+Shift+Escape hotkey-overlay-title="Открыть монитор ресурсов: btop" { spawn-sh "kitty -e btop"; }
+    Mod+E hotkey-overlay-title="Открыть файловый менеджер: spf" { spawn-sh "kitty -e spf"; }
+
+    Mod+N hotkey-overlay-title="Переключить историю уведомлений" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleHistory"; } 
+    Mod+Escape hotkey-overlay-title="Открыть центр управления" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; } 
+
+    Super+Alt+S allow-when-locked=true hotkey-overlay-title="Переключить экранный диктор: Orca" { spawn-sh "pkill orca || exec orca"; }
+
+    XF86AudioRaiseVolume hotkey-overlay-title="Увеличить громкость" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
+    XF86AudioLowerVolume hotkey-overlay-title="Уменьшить громкость" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
+    XF86AudioMute hotkey-overlay-title="Выключить звук" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
+    XF86AudioMicMute allow-when-locked=true hotkey-overlay-title="Выключить микрофон" { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    XF86AudioPlay allow-when-locked=true hotkey-overlay-title="Воспроизвести/пауза" { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop allow-when-locked=true hotkey-overlay-title="Остановить" { spawn-sh "playerctl stop"; }
+    XF86AudioPrev allow-when-locked=true hotkey-overlay-title="Предыдущий трек" { spawn-sh "playerctl previous"; }
+    XF86AudioNext allow-when-locked=true hotkey-overlay-title="Следующий трек" { spawn-sh "playerctl next"; }
+
+    XF86MonBrightnessUp hotkey-overlay-title="Увеличить яркость" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"; }
+    XF86MonBrightnessDown hotkey-overlay-title="Уменьшить яркость" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
+    
+    Mod+O repeat=false hotkey-overlay-title="Переключить Overview" { toggle-overview; }
+
+    Mod+Q repeat=false hotkey-overlay-title="Закрыть окно" { close-window; }
+
+    // Навигация по окнам и колонкам
+    Mod+H hotkey-overlay-title="Фокус на колонку слева" { focus-column-left; }
+    Mod+J hotkey-overlay-title="Фокус на окно ниже" { focus-window-down; }
+    Mod+K hotkey-overlay-title="Фокус на окно выше" { focus-window-up; }
+    Mod+L hotkey-overlay-title="Фокус на колонку справа" { focus-column-right; }
+
+    // Перемещение окон и колонок
+    Mod+Ctrl+Left hotkey-overlay-title="Переместить колонку влево" { move-column-left; }
+    Mod+Ctrl+Down hotkey-overlay-title="Переместить окно вниз" { move-window-down; }
+    Mod+Ctrl+Up hotkey-overlay-title="Переместить окно вверх" { move-window-up; }
+    Mod+Ctrl+Right hotkey-overlay-title="Переместить колонку вправо" { move-column-right; }
+    Mod+Ctrl+H hotkey-overlay-title="Переместить колонку влево" { move-column-left; }
+    Mod+Ctrl+J hotkey-overlay-title="Переместить окно вниз" { move-window-down; }
+    Mod+Ctrl+K hotkey-overlay-title="Переместить окно вверх" { move-window-up; }
+    Mod+Ctrl+L hotkey-overlay-title="Переместить колонку вправо" { move-column-right; }
+
+    // Альтернативные команды (закомментировано)
+    // Mod+J     { focus-window-or-workspace-down; }
+    // Mod+K     { focus-window-or-workspace-up; }
+    // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
+    // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
+
+    Mod+Home hotkey-overlay-title="Фокус на первую колонку" { focus-column-first; }
+    Mod+End hotkey-overlay-title="Фокус на последнюю колонку" { focus-column-last; }
+    Mod+Ctrl+Home hotkey-overlay-title="Переместить колонку в начало" { move-column-to-first; }
+    Mod+Ctrl+End hotkey-overlay-title="Переместить колонку в конец" { move-column-to-last; }
+
+    // Навигация по рабочим областям
+    Mod+U hotkey-overlay-title="Фокус на рабочую область ниже" { focus-workspace-down; }
+    Mod+I hotkey-overlay-title="Фокус на рабочую область выше" { focus-workspace-up; }
+    Mod+Ctrl+U hotkey-overlay-title="Переместить колонку на рабочую область ниже" { move-column-to-workspace-down; }
+    Mod+Ctrl+I hotkey-overlay-title="Переместить колонку на рабочую область выше" { move-column-to-workspace-up; }
+
+    Mod+Shift+U hotkey-overlay-title="Переместить рабочую область ниже" { move-workspace-down; }
+    Mod+Shift+I hotkey-overlay-title="Переместить рабочую область выше" { move-workspace-up; }
+
+    // Прокрутка колёсика мыши
+    Mod+WheelScrollDown cooldown-ms=150 hotkey-overlay-title="Рабочая область ниже" { focus-workspace-down; }
+    Mod+WheelScrollUp cooldown-ms=150 hotkey-overlay-title="Рабочая область выше" { focus-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 hotkey-overlay-title="Переместить колонку на рабочую область ниже" { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp cooldown-ms=150 hotkey-overlay-title="Переместить колонку на рабочую область выше" { move-column-to-workspace-up; }
+
+    Mod+WheelScrollRight hotkey-overlay-title="Колонка справа" { focus-column-right; }
+    Mod+WheelScrollLeft hotkey-overlay-title="Колонка слева" { focus-column-left; }
+    Mod+Ctrl+WheelScrollRight hotkey-overlay-title="Переместить колонку вправо" { move-column-right; }
+    Mod+Ctrl+WheelScrollLeft hotkey-overlay-title="Переместить колонку влево" { move-column-left; }
+
+    // Shift+прокрутка для горизонтальной навигации
+    Mod+Shift+WheelScrollDown hotkey-overlay-title="Колонка справа" { focus-column-right; }
+    Mod+Shift+WheelScrollUp hotkey-overlay-title="Колонка слева" { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown hotkey-overlay-title="Переместить колонку вправо" { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp hotkey-overlay-title="Переместить колонку влево" { move-column-left; }
+
+    // Привязки рабочих областей по индексу
+    Mod+1 hotkey-overlay-title="Фокус на рабочую область 1" { focus-workspace 1; }
+    Mod+2 hotkey-overlay-title="Фокус на рабочую область 2" { focus-workspace 2; }
+    Mod+3 hotkey-overlay-title="Фокус на рабочую область 3" { focus-workspace 3; }
+    Mod+4 hotkey-overlay-title="Фокус на рабочую область 4" { focus-workspace 4; }
+    Mod+5 hotkey-overlay-title="Фокус на рабочую область 5" { focus-workspace 5; }
+    Mod+6 hotkey-overlay-title="Фокус на рабочую область 6" { focus-workspace 6; }
+    Mod+7 hotkey-overlay-title="Фокус на рабочую область 7" { focus-workspace 7; }
+    Mod+8 hotkey-overlay-title="Фокус на рабочую область 8" { focus-workspace 8; }
+    Mod+9 hotkey-overlay-title="Фокус на рабочую область 9" { focus-workspace 9; }
+    Mod+Shift+1 hotkey-overlay-title="Переместить колонку на рабочую область 1" { move-column-to-workspace 1; }
+    Mod+Shift+2 hotkey-overlay-title="Переместить колонку на рабочую область 2" { move-column-to-workspace 2; }
+    Mod+Shift+3 hotkey-overlay-title="Переместить колонку на рабочую область 3" { move-column-to-workspace 3; }
+    Mod+Shift+4 hotkey-overlay-title="Переместить колонку на рабочую область 4" { move-column-to-workspace 4; }
+    Mod+Shift+5 hotkey-overlay-title="Переместить колонку на рабочую область 5" { move-column-to-workspace 5; }
+    Mod+Shift+6 hotkey-overlay-title="Переместить колонку на рабочую область 6" { move-column-to-workspace 6; }
+    Mod+Shift+7 hotkey-overlay-title="Переместить колонку на рабочую область 7" { move-column-to-workspace 7; }
+    Mod+Shift+8 hotkey-overlay-title="Переместить колонку на рабочую область 8" { move-column-to-workspace 8; }
+    Mod+Shift+9 hotkey-overlay-title="Переместить колонку на рабочую область 9" { move-column-to-workspace 9; }
+
+    // Переключение между текущей и предыдущей рабочей областью (закомментировано)
+    // Mod+Tab { focus-workspace-previous; }
+
+    // Поглотить/изгнать окна
+    Mod+BracketLeft hotkey-overlay-title="Поглотить/изгнать окно влево" { consume-or-expel-window-left; }
+    Mod+BracketRight hotkey-overlay-title="Поглотить/изгнать окно вправо" { consume-or-expel-window-right; }
+
+    Mod+Comma hotkey-overlay-title="Поглотить окно в колонку" { consume-window-into-column; }
+    Mod+Period hotkey-overlay-title="Изгнать окно из колонки" { expel-window-from-column; }
+
+    Mod+R hotkey-overlay-title="Переключить предустановленную ширину колонки" { switch-preset-column-width; }
+    Mod+Shift+R hotkey-overlay-title="Переключить предустановленную высоту окна" { switch-preset-window-height; }
+    Mod+Ctrl+R hotkey-overlay-title="Сбросить высоту окна" { reset-window-height; }
+    Mod+F hotkey-overlay-title="Максимизировать колонку" { maximize-column; }
+    Mod+Shift+F hotkey-overlay-title="Окно на весь экран" { fullscreen-window; }
+
+    Mod+Ctrl+F hotkey-overlay-title="Расширить колонку на доступную ширину" { expand-column-to-available-width; }
+
+    Mod+C hotkey-overlay-title="Центрировать колонку" { center-column; }
+    Mod+Ctrl+C hotkey-overlay-title="Центрировать видимые колонки" { center-visible-columns; }
+
+    // Точная настройка ширины колонки
+    Mod+Minus hotkey-overlay-title="Уменьшить ширину колонки на 10%" { set-column-width "-10%"; }
+    Mod+Equal hotkey-overlay-title="Увеличить ширину колонки на 10%" { set-column-width "+10%"; }
+
+    // Точная настройка высоты окна
+    Mod+Shift+Minus hotkey-overlay-title="Уменьшить высоту окна на 10%" { set-window-height "-10%"; }
+    Mod+Shift+Equal hotkey-overlay-title="Увеличить высоту окна на 10%" { set-window-height "+10%"; }
+
+    // Переключение плавающего режима
+    Mod+V hotkey-overlay-title="Переключить плавающий режим окна" { toggle-window-floating; }
+    Mod+Shift+V hotkey-overlay-title="Переключить фокус между плавающим и тайловым режимом" { switch-focus-between-floating-and-tiling; }
+
+    // Режим вкладок в колонке
+    Mod+W hotkey-overlay-title="Переключить режим вкладок в колонке" { toggle-column-tabbed-display; }
+
+    // Переключение раскладок (закомментировано)
+    // Mod+Space hotkey-overlay-title="Переключить раскладку на следующую" { switch-layout "next"; }
+    // Mod+Shift+Space hotkey-overlay-title="Переключить раскладку на предыдущую" { switch-layout "prev"; }
+
+    // Скриншоты
+    Print hotkey-overlay-title="Скриншот всего экрана" { screenshot; }
+    Ctrl+Print hotkey-overlay-title="Скриншот текущего монитора" { screenshot-screen; }
+    Alt+Print hotkey-overlay-title="Скриншот окна" { screenshot-window; }
+
+    // Аварийные команды
+    Mod+Delete hotkey-overlay-title="Выйти из niri" { quit; }
+    Ctrl+Alt+Delete hotkey-overlay-title="Открыть меню сессии" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+    Mod+Shift+P hotkey-overlay-title="Выключить мониторы" { power-off-monitors; }
+}

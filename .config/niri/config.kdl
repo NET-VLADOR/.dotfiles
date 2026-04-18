@@ -1,0 +1,71 @@
+
+include "./includes/input.kdl"
+include "./includes/outputs.kdl"
+
+layout {
+    gaps 5
+
+    center-focused-column "never"
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width {
+    }
+
+    focus-ring {
+        off
+
+        width 4
+        active-color "#7fc8ff"
+
+        inactive-color "#505050"
+    }
+
+    border {
+        width 2
+        active-color "#7fc8ff"
+        inactive-color "#505050"
+
+        urgent-color "#9b0000"
+    }
+
+    shadow {
+        on
+
+        draw-behind-window true
+        softness 20
+        spread 3
+        offset x=0 y=5
+        color "#0004"
+    }
+
+    struts {
+        // left 64
+        // right 64
+        // top 64
+        // bottom 64
+    }
+}
+
+spawn-at-startup "qs" "-c" "noctalia-shell"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+prefer-no-csd
+
+// screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path null
+
+animations {
+}
+
+include "./includes/workspaces.kdl"
+include "./includes/rules.kdl"
+include "./includes/binds.kdl"
+include "./noctalia.kdl"
+

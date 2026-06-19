@@ -181,7 +181,8 @@
                     "id": "Tray",
                     "pinned": [
                         "AmneziaVPN",
-                        "Telegram Desktop"
+                        "Telegram Desktop",
+                        "remmina-icon"
                     ]
                 },
                 {
@@ -228,7 +229,13 @@
                     "unreadBadgeColor": "primary"
                 },
                 {
-                    "id": "plugin:keybind-cheatsheet"
+                    "defaultSettings": {
+                        "connectedColor": "primary",
+                        "disableToastNotifications": false,
+                        "disconnectedColor": "none",
+                        "displayMode": "onhover"
+                    },
+                    "id": "plugin:network-manager-vpn"
                 }
             ]
         }
@@ -503,11 +510,11 @@
         "backgroundOpacity": 1,
         "clearDismissed": true,
         "criticalUrgencyDuration": 15,
-        "density": "compact",
+        "density": "default",
         "enableBatteryToast": true,
         "enableKeyboardLayoutToast": true,
-        "enableMarkdown": false,
-        "enableMediaToast": false,
+        "enableMarkdown": true,
+        "enableMediaToast": true,
         "enabled": true,
         "location": "top_right",
         "lowUrgencyDuration": 3,
@@ -523,8 +530,8 @@
         },
         "sounds": {
             "criticalSoundFile": "",
-            "enabled": false,
-            "excludedApps": "discord,firefox,chrome,chromium,edge",
+            "enabled": true,
+            "excludedApps": "discord,firefox,chrome,chromium,edge,telegram",
             "lowSoundFile": "",
             "normalSoundFile": "",
             "separateSounds": false,
@@ -538,8 +545,7 @@
         "enabledTypes": [
             0,
             1,
-            2,
-            3
+            2
         ],
         "location": "top_right",
         "monitors": [
@@ -698,6 +704,48 @@
                     "#f38ba8"
                 ],
                 "path": "/home/net_vlador/Pictures/walls-catppuccin-mocha/sword.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "appearance": "dark",
+                "colorScheme": "Catppuccin",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#cba6f7",
+                    "#fab387",
+                    "#94e2d5",
+                    "#f38ba8"
+                ],
+                "path": "/home/net_vlador/Pictures/walls-catppuccin-mocha/keyboard-2.png",
+                "useWallpaperColors": false
+            },
+            {
+                "appearance": "dark",
+                "colorScheme": "Catppuccin",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#cba6f7",
+                    "#fab387",
+                    "#94e2d5",
+                    "#f38ba8"
+                ],
+                "path": "/home/net_vlador/Pictures/walls-catppuccin-mocha/math.png",
+                "useWallpaperColors": false
+            },
+            {
+                "appearance": "dark",
+                "colorScheme": "Catppuccin",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#cba6f7",
+                    "#fab387",
+                    "#94e2d5",
+                    "#f38ba8"
+                ],
+                "path": "/home/net_vlador/Pictures/walls-catppuccin-mocha/swirls.jpg",
                 "useWallpaperColors": false
             }
         ],

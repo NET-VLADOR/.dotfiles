@@ -14,7 +14,7 @@
         "enableSessionSearch": true,
         "enableSettingsSearch": true,
         "enableWindowsSearch": true,
-        "iconMode": "tabler",
+        "iconMode": "native",
         "ignoreMouseInput": false,
         "overviewLayer": true,
         "pinnedApps": [
@@ -182,7 +182,8 @@
                     "pinned": [
                         "AmneziaVPN",
                         "Telegram Desktop",
-                        "remmina-icon"
+                        "remmina-icon",
+                        "Яндекс Музыка"
                     ]
                 },
                 {
@@ -236,6 +237,11 @@
                         "displayMode": "onhover"
                     },
                     "id": "plugin:network-manager-vpn"
+                },
+                {
+                    "defaultSettings": {
+                    },
+                    "id": "plugin:kde-connect"
                 }
             ]
         }
@@ -655,10 +661,6 @@
             },
             {
                 "enabled": true,
-                "id": "gtk"
-            },
-            {
-                "enabled": true,
                 "id": "telegram"
             },
             {
@@ -667,7 +669,15 @@
             },
             {
                 "enabled": true,
+                "id": "cava"
+            },
+            {
+                "enabled": true,
                 "id": "qt"
+            },
+            {
+                "enabled": true,
+                "id": "gtk"
             }
         ],
         "enableUserTheming": false
@@ -751,7 +761,7 @@
         ],
         "fillColor": "#000000",
         "fillMode": "crop",
-        "hideWallpaperFilenames": true,
+        "hideWallpaperFilenames": false,
         "linkLightAndDarkWallpapers": true,
         "monitorDirectories": [
             {
@@ -769,7 +779,7 @@
         "showHiddenFiles": false,
         "skipStartupTransition": false,
         "solidColor": "#1a1a2e",
-        "sortOrder": "name",
+        "sortOrder": "date_asc",
         "transitionDuration": 1500,
         "transitionEdgeSmoothness": 0.05,
         "transitionType": [
@@ -788,7 +798,7 @@
         "wallhavenCategories": "111",
         "wallhavenOrder": "desc",
         "wallhavenPurity": "100",
-        "wallhavenQuery": "",
+        "wallhavenQuery": "cat",
         "wallhavenRatios": "",
         "wallhavenResolutionHeight": "",
         "wallhavenResolutionMode": "atleast",

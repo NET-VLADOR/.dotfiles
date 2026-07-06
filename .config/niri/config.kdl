@@ -2,6 +2,10 @@
 include "./includes/input.kdl"
 include "./includes/outputs.kdl"
 
+environment {
+  QT_QPA_PLATFORMTHEME "qt6ct"
+}
+
 layout {
     gaps 5
 
@@ -55,7 +59,12 @@ spawn-at-startup "qs" "-c" "noctalia-shell"
 hotkey-overlay {
     skip-at-startup
 }
+cursor {
+    xcursor-size 22
 
+    hide-when-typing
+    hide-after-inactive-ms 5000
+}
 prefer-no-csd
 
 // screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"

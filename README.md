@@ -43,7 +43,6 @@ sudo pacman -S --needed git stow base-devel
 sudo pacman -S --needed \
     niri \
     kitty \
-    herdr \
     zsh \
     btop \
     fastfetch \
@@ -66,6 +65,11 @@ yay -S noctalia-shell
 
 # Zen Browser (опционально, используется в Mod+B)
 yay -S zen-browser-bin
+
+# Herdr — терминальный мультиплексор
+yay -S herdr
+
+
 ```
 
 ### Шаг 3: Установка шрифтов
@@ -82,7 +86,13 @@ cd ~
 git clone https://github.com/NET-VLADOR/.dotfiles.git ~/.dotfiles
 ```
 
-### Шаг 5: Применение конфигов через Stow
+### Шаг 5: Установка зависимостей через скрипт
+
+```bash
+bash ~/.dotfiles/scripts/install-deps.sh
+```
+
+### Шаг 6: Применение конфигов через Stow
 
 ```bash
 cd ~/.dotfiles
@@ -143,7 +153,8 @@ stow .
 | `Alt+Space`              | Лаунчер приложений                        |
 | `Mod+E`                  | Файловый менеджер (spf)                   |
 |                          | **System**                                |
-| `Mod+O`                  | Overview                                  |
+| `Mod+Tab`                | Overview                                  |
+| `Mod+O`                  | Obsidian                                  |
 | `Mod+Shift+Slash`        | Шпаргалка по хоткеям                      |
 | `Mod+Escape`             | Центр управления                          |
 | `Mod+N`                  | История уведомлений                       |
@@ -236,8 +247,8 @@ alias ls=lsd
 | `prefix + q`         | Отсоединиться (detach)       |
 | `prefix + b`         | Свернуть/развернуть сайдбар  |
 | `prefix + [`         | Copy mode                    |
-| `ctrl + h/j/k/l`     | Навигация между панелями     |
-| `prefix + h/j/k/l`   | Переместить панели           |
+| `prefix + tab`       | Следующая панель             |
+| `prefix + shift + h/j/k/l` | Переместить панели     |
 | `prefix + r`         | Режим ресайза                |
 | `prefix + shift + r` | Перезагрузить конфиг         |
 | `prefix + w`         | Палитра workspace            |

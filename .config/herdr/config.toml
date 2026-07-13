@@ -73,13 +73,6 @@ zoom = "prefix+m"
 resize_mode = "prefix+r"
 toggle_sidebar = "prefix+b"
 
-# ──  Focus ───────────────────────────
-
-focus_pane_left = "ctrl+h"
-focus_pane_down = "ctrl+j"
-focus_pane_up = "ctrl+k"
-focus_pane_right = "ctrl+l"
-
 # ──  Navigate ───────────────────────
 
 navigate_workspace_up = "up"

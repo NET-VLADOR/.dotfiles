@@ -1,0 +1,28 @@
+# VCS
+RCS
+.+,v
+CVS
+\.\#.+
+\.cvsignore
+\.svn
+\_darcs
+\.hg
+\.git
+\.gitignore
+\.gitattributes
+\.gitmodules
+
+# Backups / autosave
+.+~
+\#.*\#
+
+# Docs / build
+^/README\..*
+^/LICENSE\..*
+^/COPYING
+
+# Personal
+^/AGENTS\.md
+\.github
+\.stow-local-ignore
+^/scripts

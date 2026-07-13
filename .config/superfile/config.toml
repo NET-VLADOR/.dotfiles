@@ -3,7 +3,7 @@
 editor = "nvim"
 dir_editor = "nvim"
 auto_check_update = true
-cd_on_quit = true
+cd_on_quit = false
 default_open_file_preview = true
 show_image_preview = true
 show_panel_footer_info = true

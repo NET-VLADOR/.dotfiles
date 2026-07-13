@@ -1,11 +1,11 @@
-# === XDG Base Directories ===
+# ──  Env ────────────────────────────
+
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 
-# === Переменные окружения ===
 export ICON_THEME=Adwaita
 export GTK_ICON_THEME=Adwaita
 export QT_ICON_THEME=Adwaita
@@ -17,17 +17,18 @@ export MOZ_ENABLE_WAYLAND=1
 export QT_QPA_PLATFORM="wayland;xcb"
 export SDL_VIDEODRIVER="wayland"
 
-# Редактор
+# Editor
 export EDITOR="nvim"
 export VISUAL="nvim"
 
-# === PATH с проверкой дубликатов ===
+# ──  Path ───────────────────────────
+
 if [[ ":$PATH:" != *":$HOME/.dotnet/tools:"* ]]; then
     export PATH="$PATH:$HOME/.dotnet/tools"
 fi
 
+# ──  Superfile ──────────────────────
 
-# === Superfile ===
 spf() {
     os=$(uname -s)
 
@@ -46,7 +47,8 @@ spf() {
     return $exit_code
 }
 
-# === Oh My Zsh ===
+# ──  Zsh ────────────────────────────
+
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -58,8 +60,10 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
-# === Алиасы ===
+# ──  Aliases ────────────────────────
+
 alias ls=lsd
 
-# === Приветствие ===
+# ──  Greeter ────────────────────────
+
 fastfetch

@@ -9,3 +9,6 @@ Thumbs.db
 
 node_modules/
 vendor/
+*.log
+
+.config/herdr/session.json

@@ -1,6 +1,7 @@
+-- ──  Core ───────────────────────────
+
 local opt = vim.opt
 
--- ==========================================
 opt.clipboard = "unnamedplus"
 opt.mouse = "a"
 opt.whichwrap = "bs<>[]hl"
@@ -10,25 +11,29 @@ opt.spell = true
 opt.spelllang = { "en_us", "ru_ru" }
 vim.cmd("language ru_RU.UTF-8")
 
--- Навигация и поиск
+-- ──  Navigation ─────────────────────
+
 opt.iskeyword:append("-")
 opt.hlsearch = false
 opt.conceallevel = 2
 
--- Файлы и буфер
+-- ──  Files ──────────────────────────
+
 opt.swapfile = false
 opt.backup = false
 opt.writebackup = false
 opt.undofile = true
 opt.fileencoding = "utf-8"
 
--- Поведение редактора
+-- ──  Editor ─────────────────────────
+
 opt.completeopt = "menuone,noselect"
 opt.shortmess:append("c")
 opt.formatoptions:remove({ "c", "r", "o" })
 vim.opt.runtimepath:remove("/usr/share/vim/vimfiles")
 
--- ==========================================
+-- ──  UI ─────────────────────────────
+
 opt.number = true
 opt.relativenumber = true
 opt.wrap = false

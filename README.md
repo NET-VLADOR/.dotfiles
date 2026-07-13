@@ -13,7 +13,7 @@
 | **File Manager**   | Superfile (spf)           |
 | **System Monitor** | Btop                      |
 | **Bar/Panel**      | Noctalia Shell            |
-| **Multiplexer**    | Tmux                      |
+| **Multiplexer**    | Herdr                     |
 | **Git TUI**        | Lazygit                   |
 | **Info Fetch**     | Fastfetch                 |
 | **LS Replacement** | Lsd                       |
@@ -43,7 +43,7 @@ sudo pacman -S --needed git stow base-devel
 sudo pacman -S --needed \
     niri \
     kitty \
-    tmux \
+    herdr \
     zsh \
     btop \
     fastfetch \
@@ -214,33 +214,43 @@ alias ls=lsd
 - Truecolor
 - Графики: braille
 
-### 🌀 Tmux
+### 🌀 Herdr
 
-**Конфиг:** `.config/tmux/`
+**Конфиг:** `.config/herdr/config.toml`
 
-Терминальный мультиплексор.
+Терминальный мультиплексор (мигрирован с tmux).
 
 **Префикс:** `Ctrl+Space`
 
-#### Плагины
+**Тема:** Catppuccin Mocha, акцент `#cba6f7` (mauve)
 
-- **tpm** — менеджер плагинов
-- **catppuccin/tmux** — тема Catppuccin Mocha
-- **vim-tmux-navigator** — навигация vim-style между панелями
-- **tmux-which-key** — отображение доступных клавиш
+#### Базовые клавиши
 
-#### Горячие клавиши
+| Клавиши              | Действие                     |
+| -------------------- | ---------------------------- |
+| `prefix + -`         | Сплит по горизонтали         |
+| `prefix + \|`        | Сплит по вертикали           |
+| `prefix + c`         | Новая вкладка                |
+| `prefix + x`         | Закрыть панель               |
+| `prefix + m`         | Zoom панели                  |
+| `prefix + q`         | Отсоединиться (detach)       |
+| `prefix + b`         | Свернуть/развернуть сайдбар  |
+| `prefix + [`         | Copy mode                    |
+| `ctrl + h/j/k/l`     | Навигация между панелями     |
+| `prefix + h/j/k/l`   | Переместить панели           |
+| `prefix + r`         | Режим ресайза                |
+| `prefix + shift + r` | Перезагрузить конфиг         |
+| `prefix + w`         | Палитра workspace            |
+| `prefix + g`         | Быстрый переход (fuzzy)      |
+| `prefix + n/p`       | Следующая/предыдущая вкладка |
+| `prefix + alt + g`   | Lazygit                      |
 
-| Клавиши            | Действие                   |
-| ------------------ | -------------------------- |
-| `prefix + r`       | Перезагрузить конфиг       |
-| `prefix + \`       | Вертикальное разделение    |
-| `prefix + -`       | Горизонтальное разделение  |
-| `prefix + c`       | Новое окно                 |
-| `prefix + h/j/k/l` | Изменение размера панелей  |
-| `prefix + m`       | Zoom панели                |
-| `prefix + v`       | Начало выделения (vi-mode) |
-| `prefix + y`       | Копирование в буфер        |
+#### Особенности
+
+- **Уведомления:** system (через notify-send), звук включён
+- **Восстановление сессий:** возобновление агентов (opencode, claude code и др.)
+- **Рабочая директория:** наследует `-c '#{pane_current_path}'` (`new_cwd = "follow"`)
+- **Git worktrees** из сайдбара
 
 ### 🗂️ Superfile
 

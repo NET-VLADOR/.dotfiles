@@ -49,7 +49,7 @@ return {
       vim.list_extend(opts.ensure_installed, {
         "csharpier",
         "roslyn-language-server",
-        "netcoredbg", -- Для отладки
+        "netcoredbg", -- ──  Debug ──
       })
     end,
   },

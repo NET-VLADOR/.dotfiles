@@ -1,0 +1,143 @@
+# ──  Core ────────────────────────────
+
+onboarding = false
+
+[update]
+channel = "stable"
+
+version_check = true
+manifest_check = true
+
+# ──  Theme ───────────────────────────
+
+[theme]
+name = "catppuccin"
+auto_switch = false
+
+[theme.custom]
+accent = "#cba6f7"   # mauve
+
+# ──  Terminal ────────────────────────
+
+[terminal]
+shell_mode = "auto"
+new_cwd = "follow"
+
+# ──  Worktrees ──────────────────────
+
+[worktrees]
+directory = "~/.herdr/worktrees"
+
+# ──  Remote ──────────────────────────
+
+[remote]
+manage_ssh_config = true
+
+# ──  Keys ────────────────────────────
+
+[keys]
+prefix = "ctrl+space"
+detach = "prefix+q"
+workspace_picker = "prefix+w"
+goto = "prefix+g"
+new_workspace = "prefix+shift+n"
+new_worktree = "prefix+shift+g"
+rename_workspace = "prefix+shift+w"
+close_workspace = "prefix+shift+d"
+remote_image_paste = "ctrl+v"
+
+# ──  Tabs ────────────────────────────
+
+new_tab = "prefix+c"
+rename_tab = "prefix+shift+t"
+previous_tab = "prefix+p"
+next_tab = "prefix+n"
+switch_tab = "prefix+1..9"
+close_tab = "prefix+shift+x"
+
+# ──  Panes ───────────────────────────
+
+split_horizontal = "prefix+minus"
+split_vertical = "prefix+|"
+close_pane = "prefix+x"
+
+swap_pane_left = "prefix+shift+h"
+swap_pane_down = "prefix+shift+j"
+swap_pane_up = "prefix+shift+k"
+swap_pane_right = "prefix+shift+l"
+
+cycle_pane_next = "prefix+tab"
+cycle_pane_previous = "prefix+shift+tab"
+
+zoom = "prefix+m"
+resize_mode = "prefix+r"
+toggle_sidebar = "prefix+b"
+
+# ──  Focus ───────────────────────────
+
+focus_pane_left = "ctrl+h"
+focus_pane_down = "ctrl+j"
+focus_pane_up = "ctrl+k"
+focus_pane_right = "ctrl+l"
+
+# ──  Navigate ───────────────────────
+
+navigate_workspace_up = "up"
+navigate_workspace_down = "down"
+navigate_pane_left = "h"
+navigate_pane_down = "j"
+navigate_pane_up = "k"
+navigate_pane_right = "l"
+
+# ──  Reload ──────────────────────────
+
+reload_config = "prefix+shift+r"
+copy_mode = "prefix+["
+
+# ──  Commands ────────────────────────
+
+[[keys.command]]
+key = "prefix+alt+g"
+type = "pane"
+command = "lazygit"
+description = "run lazygit"
+
+# ──  UI ──────────────────────────────
+
+[ui]
+mouse_capture = true
+confirm_close = true
+pane_borders = true
+pane_gaps = true
+show_agent_labels_on_pane_borders = true
+agent_panel_sort = "spaces"
+accent = "#cba6f7"
+
+# ──  Notifications ───────────────────
+
+[ui.toast]
+delivery = "system"
+delay_seconds = 1
+
+[ui.toast.clipboard]
+enabled = true
+
+# ──  Sound ───────────────────────────
+
+[ui.sound]
+enabled = true
+
+# ──  Session ─────────────────────────
+
+[session]
+resume_agents_on_restore = true
+
+# ──  Advanced ────────────────────────
+
+[advanced]
+# scrollback_limit_bytes = 10485760
+
+[experimental]
+# allow_nested = false
+# kitty_graphics = false
+# pane_history = false

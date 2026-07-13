@@ -155,8 +155,8 @@ binds {
     Mod+Shift+Equal hotkey-overlay-title="Увеличить высоту окна на 10%" { set-window-height "+10%"; }
 
     // Режимы отображения и фокус
-    // Mod+V hotkey-overlay-title="Переключить плавающий режим окна" { toggle-window-floating; }
-    Mod+Shift+V hotkey-overlay-title="Переключить фокус между плавающим и тайловым режимом" { switch-focus-between-floating-and-tiling; }
+    Mod+Shift+V hotkey-overlay-title="Переключить плавающий режим окна" { toggle-window-floating; }
+    Mod+Shift+Space hotkey-overlay-title="Переключить фокус между плавающим и тайловым" { switch-focus-between-floating-and-tiling; }
     Mod+W hotkey-overlay-title="Переключить режим вкладок в колонке" { toggle-column-tabbed-display; }
 
     // Переключение раскладок (закомментировано)

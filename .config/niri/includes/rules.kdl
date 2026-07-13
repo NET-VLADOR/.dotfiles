@@ -25,16 +25,21 @@ window-rule {
 
 window-rule {
     match app-id="org.telegram.desktop"
-    match app-id="AmneziaVPN"
-    
     open-on-workspace "  "
+    default-column-width { proportion 0.66666; }
+    block-out-from "screen-capture"
+}
 
+window-rule {
+    match app-id="AmneziaVPN"
+    open-on-workspace "  "
+    default-column-width { proportion 0.33333; }
     block-out-from "screen-capture"
 }
 
 window-rule {
     match app-id="YandexMusic"
 
-    open-fullscreen true   
+    open-fullscreen true
     open-on-workspace "  "
 }

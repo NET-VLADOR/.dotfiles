@@ -61,7 +61,7 @@ hotkey-overlay {
 }
 cursor {
     xcursor-size 22
-
+    xcursor-theme "catppuccin-mocha-light-cursors"
     hide-when-typing
     hide-after-inactive-ms 5000
 }

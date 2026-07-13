@@ -176,14 +176,10 @@
                     ],
                     "chevronColor": "none",
                     "colorizeIcons": false,
-                    "drawerEnabled": true,
+                    "drawerEnabled": false,
                     "hidePassive": false,
                     "id": "Tray",
                     "pinned": [
-                        "AmneziaVPN",
-                        "Telegram Desktop",
-                        "remmina-icon",
-                        "Яндекс Музыка"
                     ]
                 },
                 {
@@ -756,6 +752,20 @@
                     "#f38ba8"
                 ],
                 "path": "/home/net_vlador/Pictures/walls-catppuccin-mocha/swirls.jpg",
+                "useWallpaperColors": false
+            },
+            {
+                "appearance": "dark",
+                "colorScheme": "Catppuccin",
+                "darkMode": true,
+                "generationMethod": "tonal-spot",
+                "paletteColors": [
+                    "#cba6f7",
+                    "#fab387",
+                    "#94e2d5",
+                    "#f38ba8"
+                ],
+                "path": "/home/net_vlador/Pictures/walls-catppuccin-mocha/trippy-purple.png",
                 "useWallpaperColors": false
             }
         ],

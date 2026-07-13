@@ -1,0 +1,18 @@
+// ──  Startup ──────────────────────────
+
+spawn-at-startup "qs" "-c" "noctalia-shell"
+
+hotkey-overlay {
+    skip-at-startup
+}
+cursor {
+    xcursor-size 22
+    xcursor-theme "catppuccin-mocha-light-cursors"
+    hide-when-typing
+    hide-after-inactive-ms 5000
+}
+// screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+screenshot-path null
+
+animations {
+}

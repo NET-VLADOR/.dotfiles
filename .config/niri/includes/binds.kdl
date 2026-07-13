@@ -1,8 +1,5 @@
 binds {
-    // ============================================================================
-    // 🎛️ NOCTALIA SHELL (qs) IPC COMMANDS — центральное управление
-    // ============================================================================
-    // Лаунчер, уведомления, центр управления, громкость, яркость, буфер обмена, сессия
+    // ──  Noctalia ──────────────────────────
     Mod+Shift+Slash hotkey-overlay-title="Показать шпаргалку по горячим клавишам" { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
     Mod+Shift+W hotkey-overlay-title="Переключить обои" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "toggle"; }
     Mod+Shift+Period hotkey-overlay-title="Открыть эмодзи-лаунчер" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
@@ -17,53 +14,53 @@ binds {
     Mod+V hotkey-overlay-title="Открыть буфер обмена" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
     Ctrl+Alt+Delete hotkey-overlay-title="Открыть меню сессии" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
 
-    // ============================================================================
-    // 🖥️ ЗАПУСК ПРИЛОЖЕНИЙ
-    // ============================================================================
+    // ──  Launch ────────────────────────────
     Mod+T hotkey-overlay-title="Открыть терминал: Kitty" { spawn "kitty"; }
     Mod+B hotkey-overlay-title="Открыть браузер: Zen Browser" { spawn "zen-browser"; }
     Ctrl+Shift+Escape hotkey-overlay-title="Открыть монитор ресурсов: btop" { spawn-sh "kitty -e btop"; }
     Mod+E hotkey-overlay-title="Открыть файловый менеджер: spf" { spawn-sh "kitty -e spf"; }
 
-    // ============================================================================
-    // 🎵 МЕДИА И АУДИО (сторонние утилиты)
-    // ============================================================================
+    // ──  Media ─────────────────────────────
     XF86AudioMicMute allow-when-locked=true hotkey-overlay-title="Выключить микрофон" { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
     XF86AudioPlay allow-when-locked=true hotkey-overlay-title="Воспроизвести/пауза" { spawn-sh "playerctl play-pause"; }
     XF86AudioStop allow-when-locked=true hotkey-overlay-title="Остановить" { spawn-sh "playerctl stop"; }
     XF86AudioPrev allow-when-locked=true hotkey-overlay-title="Предыдущий трек" { spawn-sh "playerctl previous"; }
     XF86AudioNext allow-when-locked=true hotkey-overlay-title="Следующий трек" { spawn-sh "playerctl next"; }
     
-    // ============================================================================
-    // 🪟 БАЗОВОЕ УПРАВЛЕНИЕ ОКНАМИ
-    // ============================================================================
+    // ──  Basic ─────────────────────────────
     Mod+O repeat=false hotkey-overlay-title="Переключить Overview" { toggle-overview; }
     Mod+Q repeat=false hotkey-overlay-title="Закрыть окно" { close-window; }
 
-    // ============================================================================
-    // 🧭 НАВИГАЦИЯ: ОКНА И КОЛОНКИ
-    // ============================================================================
-    // Навигация по окнам и колонкам
-    Mod+H hotkey-overlay-title="Фокус на колонку слева" { focus-column-left; }
-    Mod+J hotkey-overlay-title="Фокус на окно ниже" { focus-window-down; }
-    Mod+K hotkey-overlay-title="Фокус на окно выше" { focus-window-up; }
-    Mod+L hotkey-overlay-title="Фокус на колонку справа" { focus-column-right; }
+    // ──  Navigation ────────────────────────
+    // J/K — рабочие области (workspace)
+    Mod+J hotkey-overlay-title="Фокус на рабочую область ниже" { focus-workspace-down; }
+    Mod+K hotkey-overlay-title="Фокус на рабочую область выше" { focus-workspace-up; }
 
-    // Перемещение окон и колонок
-    Mod+Ctrl+Left hotkey-overlay-title="Переместить колонку влево" { move-column-left; }
-    Mod+Ctrl+Down hotkey-overlay-title="Переместить окно вниз" { move-window-down; }
-    Mod+Ctrl+Up hotkey-overlay-title="Переместить окно вверх" { move-window-up; }
-    Mod+Ctrl+Right hotkey-overlay-title="Переместить колонку вправо" { move-column-right; }
-    Mod+Ctrl+H hotkey-overlay-title="Переместить колонку влево" { move-column-left; }
-    Mod+Ctrl+J hotkey-overlay-title="Переместить окно вниз" { move-window-down; }
-    Mod+Ctrl+K hotkey-overlay-title="Переместить окно вверх" { move-window-up; }
-    Mod+Ctrl+L hotkey-overlay-title="Переместить колонку вправо" { move-column-right; }
+    // H/L — колонки, на краю — переход на монитор
+    Mod+H hotkey-overlay-title="Фокус на колонку или монитор слева" { focus-column-or-monitor-left; }
+    Mod+L hotkey-overlay-title="Фокус на колонку или монитор справа" { focus-column-or-monitor-right; }
 
-    // Альтернативные команды (закомментировано)
-    // Mod+J     { focus-window-or-workspace-down; }
-    // Mod+K     { focus-window-or-workspace-up; }
-    // Mod+Ctrl+J     { move-window-down-or-to-workspace-down; }
-    // Mod+Ctrl+K     { move-window-up-or-to-workspace-up; }
+    // Ctrl+H/L — колонки строго (без перехода на монитор)
+    Mod+Ctrl+H hotkey-overlay-title="Фокус на колонку слева" { focus-column-left; }
+    Mod+Ctrl+L hotkey-overlay-title="Фокус на колонку справа" { focus-column-right; }
+
+    // Ctrl+J/K — окна внутри колонки
+    Mod+Ctrl+J hotkey-overlay-title="Фокус на окно ниже" { focus-window-down; }
+    Mod+Ctrl+K hotkey-overlay-title="Фокус на окно выше" { focus-window-up; }
+
+    // Shift+J/K — переместить окно на другой workspace (на краю)
+    Mod+Shift+J hotkey-overlay-title="Переместить окно на рабочую область ниже" { move-window-down-or-to-workspace-down; }
+    Mod+Shift+K hotkey-overlay-title="Переместить окно на рабочую область выше" { move-window-up-or-to-workspace-up; }
+
+    // Shift+H/L — переместить колонку на другой монитор (на краю)
+    Mod+Shift+H hotkey-overlay-title="Переместить колонку на монитор слева" { move-column-left-or-to-monitor-left; }
+    Mod+Shift+L hotkey-overlay-title="Переместить колонку на монитор справа" { move-column-right-or-to-monitor-right; }
+
+    // Ctrl+Shift+H/J/K/L — перемещение окон и колонок (строго, без выхода)
+    Mod+Ctrl+Shift+H hotkey-overlay-title="Переместить колонку влево" { move-column-left; }
+    Mod+Ctrl+Shift+J hotkey-overlay-title="Переместить окно вниз" { move-window-down; }
+    Mod+Ctrl+Shift+K hotkey-overlay-title="Переместить окно вверх" { move-window-up; }
+    Mod+Ctrl+Shift+L hotkey-overlay-title="Переместить колонку вправо" { move-column-right; }
 
     // Крайние позиции колонок
     Mod+Home hotkey-overlay-title="Фокус на первую колонку" { focus-column-first; }
@@ -71,12 +68,8 @@ binds {
     Mod+Ctrl+Home hotkey-overlay-title="Переместить колонку в начало" { move-column-to-first; }
     Mod+Ctrl+End hotkey-overlay-title="Переместить колонку в конец" { move-column-to-last; }
 
-    // ============================================================================
-    // 🗂️ УПРАВЛЕНИЕ РАБОЧИМИ ОБЛАСТЯМИ
-    // ============================================================================
-    // Навигация по рабочим областям
-    Mod+U hotkey-overlay-title="Фокус на рабочую область ниже" { focus-workspace-down; }
-    Mod+I hotkey-overlay-title="Фокус на рабочую область выше" { focus-workspace-up; }
+    // ──  Workspaces ────────────────────────
+    // Перемещение колонок между рабочими областями
     Mod+Ctrl+U hotkey-overlay-title="Переместить колонку на рабочую область ниже" { move-column-to-workspace-down; }
     Mod+Ctrl+I hotkey-overlay-title="Переместить колонку на рабочую область выше" { move-column-to-workspace-up; }
     Mod+Shift+U hotkey-overlay-title="Переместить рабочую область ниже" { move-workspace-down; }
@@ -123,14 +116,10 @@ binds {
     // Переключение между текущей и предыдущей рабочей областью (закомментировано)
     // Mod+Tab { focus-workspace-previous; }
 
-    // ============================================================================
-    // 📐 МАКЕТ: КОЛОНКИ И ОКНА (LAYOUT)
-    // ============================================================================
-    // Поглотить/изгнать окна
-    Mod+BracketLeft hotkey-overlay-title="Поглотить/изгнать окно влево" { consume-or-expel-window-left; }
-    Mod+BracketRight hotkey-overlay-title="Поглотить/изгнать окно вправо" { consume-or-expel-window-right; }
-    Mod+Comma hotkey-overlay-title="Поглотить окно в колонку" { consume-window-into-column; }
-    Mod+Period hotkey-overlay-title="Изгнать окно из колонки" { expel-window-from-column; }
+    // ──  Layout ────────────────────────────
+    // [ / ] — втянуть/вытолкнуть окно из колонки влево/вправо
+    Mod+BracketLeft hotkey-overlay-title="Втянуть/вытолкнуть окно влево" { consume-or-expel-window-left; }
+    Mod+BracketRight hotkey-overlay-title="Втянуть/вытолкнуть окно вправо" { consume-or-expel-window-right; }
 
     // Предустановки и размеры
     Mod+R hotkey-overlay-title="Переключить предустановленную ширину колонки" { switch-preset-column-width; }
@@ -163,16 +152,12 @@ binds {
     // Mod+Space hotkey-overlay-title="Переключить раскладку на следующую" { switch-layout "next"; }
     // Mod+Shift+Space hotkey-overlay-title="Переключить раскладку на предыдущую" { switch-layout "prev"; }
 
-    // ============================================================================
-    // 🖼️ СКРИНШОТЫ
-    // ============================================================================
+    // ──  Screenshots ───────────────────────
     Print hotkey-overlay-title="Скриншот всего экрана" { screenshot; }
     Ctrl+Print hotkey-overlay-title="Скриншот текущего монитора" { screenshot-screen; }
     Alt+Print hotkey-overlay-title="Скриншот окна" { screenshot-window; }
 
-    // ============================================================================
-    // ⚙️ СИСТЕМНЫЕ И АВАРИЙНЫЕ КОМАНДЫ
-    // ============================================================================
+    // ──  System ────────────────────────────
     Mod+Delete hotkey-overlay-title="Выйти из niri" { quit; }
     Mod+Shift+P hotkey-overlay-title="Выключить мониторы" { power-off-monitors; }
 }

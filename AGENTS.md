@@ -7,32 +7,53 @@ cd ~/.dotfiles && stow .        # create symlinks
 cd ~/.dotfiles && stow -D .     # remove symlinks
 ```
 
-## Requirements
+- `.stow-local-ignore` excludes AGENTS.md, `.github/`, `scripts/`, `README*`, `LICENSE*` from stow
+- Only files/dirs under `.config/` and root files like `.zshrc` are stowed
 
-- Arch Linux, Wayland session (niri compositor)
-- GNU Stow, Nerd Font (JetBrainsMono), all tools listed in README
-- Neovim 0.10+ (uses Lazy.nvim — run `nvim` and let it install plugins)
+## Niri config structure
 
-## Key configs
+```
+.config/niri/
+├── config.kdl              # main file, includes everything
+├── noctalia.kdl             # colors & integration with Noctalia Shell
+└── includes/
+    ├── binds.kdl            # keybindings
+    ├── input.kdl            # keyboard, touchpad, focus settings
+    ├── layout.kdl           # gaps, border, shadow, focus-ring
+    ├── outputs.kdl          # display config (eDP-1, DP-1, HDMI-A-1/2)
+    ├── rules.kdl            # window rules with workspace assignments
+    ├── startup.kdl          # autostart, cursor, screenshot, animations
+    └── workspaces.kdl       # 7 workspaces pinned to DP-1
+```
 
-| Path                      | Tool                                                                        |
-| ------------------------- | --------------------------------------------------------------------------- |
-| `.config/niri/config.kdl` | WM (niri)                                                                   |
-| `.config/niri/includes/`  | Keybinds, input, outputs, layout, startup, rules, workspaces                |
-| `.config/kitty/`          | Terminal                                                                    |
-| `.config/herdr/`          | Multiplexer (prefix: `Ctrl+Space`, мигрирован с tmux)                       |
-| `.config/nvim/`           | Editor (Lazy.nvim managed)                                                  |
-| `.config/noctalia/`       | Wayland shell widgets                                                       |
-| `.zshrc`                  | Shell (Oh My Zsh, plugins: git/zsh-autosuggestions/zsh-syntax-highlighting) |
+Reload: `niri msg action load-config-file`
 
-## Theme
+## Workspaces
 
-Catppuccin Mocha across all components (kitty, btop, herdr, lazygit, bat, etc.).
+| # | Icon | Name | Apps |
+|---|------|------|------|
+| 1 | `` | Web | Zen |
+| 2 | `` | Code | Kitty (nvim, lazygit, dotnet) |
+| 3 | `` | Social | Telegram |
+| 4 | `` | Productivity | Obsidian |
+| 5 | `` | System | btop, superfile, AmneziaVPN |
+| 6 | `` | Music | YandexMusic |
+| 7 | `` | Games | Steam |
 
 ## Gotchas
 
+- **Rules ordering**: niri uses the **last** matching rule. Put specific rules (btop/superfile by title) after the generic kitty rule, or the generic rule wins.
+- **Border special case** ([docs](https://github.com/niri-wm/niri/wiki/Configuration:-Include#border-special-case)): `border { ... }` in the main config implies `on`. In an include file, you must add `on` explicitly. The current `noctalia.kdl` has `border { active-color ... }` without `on` — since it's included after `includes/layout.kdl` (which has `border { on; width 2; }`), the color overrides may be ignored. To fix, add `on` in `noctalia.kdl`'s border block or move colors into `layout.kdl`.
 - `.config/noctalia/plugins/` is gitignored
-- No build/test/lint/CI infrastructure — purely config files managed via stow
-- XDG env vars set in `.zshrc`, not system-wide
+- XDG env vars (`XDG_CONFIG_HOME`, etc.) are set in `.zshrc`, not system-wide
 - `alias ls=lsd` in `.zshrc` — `ls` is not GNU ls
-- **niri border special case** (<https://github.com/niri-wm/niri/wiki/Configuration:-Include#border-special-case>): `layout { border { ... } }` in the main config implicitly enables the border (like `on`). In an include file, it does nothing — you must explicitly add `on` to the border section.
+- `spf` is a shell function defined in `.zshrc`, not a standalone binary (preserves last directory)
+- No build/test/lint infrastructure — purely config files managed via stow
+- All Catppuccin Mocha themed: niri, kitty, btop, herdr, lazygit, bat, lsd, fastfetch, noctalia
+- Dotnet tools path: `$HOME/.dotnet/tools` added to PATH in `.zshrc`
+
+## Install
+
+```bash
+bash ~/.dotfiles/scripts/install-deps.sh   # pacman + yay deps, then stow
+```

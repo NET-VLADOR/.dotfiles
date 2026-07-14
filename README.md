@@ -114,6 +114,24 @@ stow .
 
 Основной оконный менеджер с тайлингом.
 
+#### Workspace
+
+| #   | Иконка | Название     | Приложения                    |
+| --- | ------ | ------------ | ----------------------------- |
+| 1   | ``    | Web          | Zen Browser                   |
+| 2   | ``    | Code         | Kitty (nvim, lazygit, dotnet) |
+| 3   | ``    | Social       | Telegram                      |
+| 4   | ``    | Productivity | Obsidian                      |
+| 5   | ``    | System       | btop, superfile, AmneziaVPN   |
+| 6   | ``    | Music        | YandexMusic                   |
+| 7   | ``    | Games        | Steam                         |
+
+#### Обновление конфига Niri
+
+```bash
+niri msg action load-config-file
+```
+
 #### Основные горячие клавиши
 
 | Клавиши                  | Действие                                  |
@@ -237,24 +255,24 @@ alias ls=lsd
 
 #### Базовые клавиши
 
-| Клавиши              | Действие                     |
-| -------------------- | ---------------------------- |
-| `prefix + -`         | Сплит по горизонтали         |
-| `prefix + \|`        | Сплит по вертикали           |
-| `prefix + c`         | Новая вкладка                |
-| `prefix + x`         | Закрыть панель               |
-| `prefix + m`         | Zoom панели                  |
-| `prefix + q`         | Отсоединиться (detach)       |
-| `prefix + b`         | Свернуть/развернуть сайдбар  |
-| `prefix + [`         | Copy mode                    |
-| `prefix + tab`       | Следующая панель             |
-| `prefix + shift + h/j/k/l` | Переместить панели     |
-| `prefix + r`         | Режим ресайза                |
-| `prefix + shift + r` | Перезагрузить конфиг         |
-| `prefix + w`         | Палитра workspace            |
-| `prefix + g`         | Быстрый переход (fuzzy)      |
-| `prefix + n/p`       | Следующая/предыдущая вкладка |
-| `prefix + alt + g`   | Lazygit                      |
+| Клавиши                    | Действие                     |
+| -------------------------- | ---------------------------- |
+| `prefix + -`               | Сплит по горизонтали         |
+| `prefix + \|`              | Сплит по вертикали           |
+| `prefix + c`               | Новая вкладка                |
+| `prefix + x`               | Закрыть панель               |
+| `prefix + m`               | Zoom панели                  |
+| `prefix + q`               | Отсоединиться (detach)       |
+| `prefix + b`               | Свернуть/развернуть сайдбар  |
+| `prefix + [`               | Copy mode                    |
+| `prefix + tab`             | Следующая панель             |
+| `prefix + shift + h/j/k/l` | Переместить панели           |
+| `prefix + r`               | Режим ресайза                |
+| `prefix + shift + r`       | Перезагрузить конфиг         |
+| `prefix + w`               | Палитра workspace            |
+| `prefix + g`               | Быстрый переход (fuzzy)      |
+| `prefix + n/p`             | Следующая/предыдущая вкладка |
+| `prefix + alt + g`         | Lazygit                      |
 
 #### Особенности
 

@@ -521,7 +521,8 @@
         "location": "top_right",
         "lowUrgencyDuration": 3,
         "monitors": [
-            "DP-1"
+            "DP-1",
+            "eDP-1"
         ],
         "normalUrgencyDuration": 8,
         "overlayLayer": true,
@@ -552,7 +553,8 @@
         ],
         "location": "top_right",
         "monitors": [
-            "DP-1"
+            "DP-1",
+            "eDP-1"
         ],
         "overlayLayer": true
     },

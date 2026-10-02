@@ -12,3 +12,5 @@ vendor/
 *.log
 
 .config/herdr/session.json
+.config/herdr/session-snapshots/
+.config/herdr/.plugins.lock

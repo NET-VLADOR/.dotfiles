@@ -23,6 +23,7 @@ CVS
 
 # Personal
 ^/AGENTS\.md
+^/\.codegraph
 \.github
 \.stow-local-ignore
 ^/scripts

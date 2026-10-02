@@ -42,7 +42,7 @@ PACMAN_PACKAGES=(
 AUR_PACKAGES=(
     noctalia-shell
     zen-browser-bin
-    herdr
+    herdr-bin
 )
 
 # ──  Install pacman ──────────────────────

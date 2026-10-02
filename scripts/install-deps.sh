@@ -36,7 +36,7 @@ PACMAN_PACKAGES=(
     # Wayland utils
     wl-clipboard cliphist brightnessctl wireplumber playerctl
     # Fonts
-    ttf-jetbrains-mono-nerd
+    ttf-jetbrains-mono-nerd ttf-ubuntu-nerd
 )
 
 AUR_PACKAGES=(

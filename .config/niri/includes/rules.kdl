@@ -20,12 +20,20 @@ window-rule {
 
 window-rule {
     match app-id="zen"
+    match app-id="chromium"
     open-on-workspace "  "
+    open-maximized true
 }
 
 window-rule {
     match app-id="kitty"
     open-on-workspace "  "
+}
+
+window-rule {
+    match app-id="kitty" title="^btop$"
+    match app-id="kitty" title="^spf$"
+    open-on-workspace "  "
 }
 
 window-rule {
@@ -55,5 +63,8 @@ window-rule {
 
 window-rule {
     match app-id="steam"
+    match app-id="moe.launcher.an-anime-game-launcher"
+    match app-id="heroic"
+    open-maximized true
     open-on-workspace "  "
 }

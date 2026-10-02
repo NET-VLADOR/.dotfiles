@@ -27,3 +27,4 @@ CVS
 \.github
 \.stow-local-ignore
 ^/scripts
+^/etc

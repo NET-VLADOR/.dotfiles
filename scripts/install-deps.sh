@@ -24,7 +24,7 @@ warn()  { echo -e "\e[33m!\e[0m $*"; }
 
 PACMAN_PACKAGES=(
     # System
-    git stow base-devel
+    git stow base-devel keyd
     # WM & terminal
     niri kitty
     # Shell
@@ -113,6 +113,13 @@ else
         run stow .
         ok "Dotfiles stowed!"
     fi
+fi
+
+# ──  keyd config ─────────────────────────
+info "keyd config…"
+run sudo install -Dm644 "$(dirname "$0")/../etc/keyd/default.conf" /etc/keyd/default.conf
+if ! $DRY_RUN && systemctl is-active --quiet keyd; then
+    run sudo systemctl restart keyd
 fi
 
 echo -e "\e[32mDone.\e[0m"

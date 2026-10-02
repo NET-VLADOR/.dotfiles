@@ -9,6 +9,7 @@ export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export ICON_THEME=Adwaita
 export GTK_ICON_THEME=Adwaita
 export QT_ICON_THEME=Adwaita
+export QS_ICON_THEME=Adwaita
 export XCURSOR_THEME=Adwaita
 export XCURSOR_SIZE=24
 

@@ -27,6 +27,10 @@ if [[ ":$PATH:" != *":$HOME/.dotnet/tools:"* ]]; then
     export PATH="$PATH:$HOME/.dotnet/tools"
 fi
 
+if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
 # ──  Superfile ──────────────────────
 
 spf() {

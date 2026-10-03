@@ -5,7 +5,12 @@ binds {
     Mod+Shift+Period hotkey-overlay-title="Открыть эмодзи-лаунчер" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
     Alt+Space hotkey-overlay-title="Открыть лаунчер" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
     Mod+N hotkey-overlay-title="Переключить историю уведомлений" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleHistory"; } 
+    Mod+Shift+N hotkey-overlay-title="Переключить режим Не беспокоить" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleDND"; }
+    Mod+Ctrl+N hotkey-overlay-title="Очистить историю уведомлений" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "clear"; }
     Mod+Escape hotkey-overlay-title="Открыть центр управления" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; } 
+    Mod+Comma hotkey-overlay-title="Открыть настройки Noctalia" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
+    Mod+Shift+Escape hotkey-overlay-title="Заблокировать экран" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
+    Mod+Shift+M hotkey-overlay-title="Выключить микрофон" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
     XF86AudioRaiseVolume hotkey-overlay-title="Увеличить громкость" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
     XF86AudioLowerVolume hotkey-overlay-title="Уменьшить громкость" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
     XF86AudioMute hotkey-overlay-title="Выключить звук" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }

@@ -684,7 +684,7 @@
     },
     "ui": {
         "boxBorderEnabled": true,
-        "fontDefault": "JetBrainsMono Nerd Font",
+        "fontDefault": "Ubuntu Nerd Font",
         "fontDefaultScale": 1,
         "fontFixed": "JetBrainsMono Nerd Font Propo",
         "fontFixedScale": 1,

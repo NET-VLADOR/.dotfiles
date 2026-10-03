@@ -40,6 +40,7 @@ PACMAN_PACKAGES=(
 )
 
 AUR_PACKAGES=(
+    catppuccin-cursors-mocha
     noctalia-shell
     zen-browser-bin
     herdr-bin

@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Resolve this script's directory to an absolute path *before* any `cd`,
+# so later references stay valid regardless of how the script was invoked.
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+REPO_ROOT="$(dirname -- "$SCRIPT_DIR")"
+
 DRY_RUN=false
 for arg in "$@"; do
     case "$arg" in
@@ -101,7 +106,7 @@ else
 fi
 
 # ──  Stow dotfiles ────────────────────────
-cd "$(dirname "$0")/.."
+cd "$REPO_ROOT"
 info "Stow dotfiles…"
 if $DRY_RUN; then
     run stow --simulate .
@@ -118,7 +123,7 @@ fi
 
 # ──  keyd config ─────────────────────────
 info "keyd config…"
-run sudo install -Dm644 "$(dirname "$0")/../etc/keyd/default.conf" /etc/keyd/default.conf
+run sudo install -Dm644 "$REPO_ROOT/etc/keyd/default.conf" /etc/keyd/default.conf
 if ! $DRY_RUN && systemctl is-active --quiet keyd; then
     run sudo systemctl restart keyd
 fi

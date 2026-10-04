@@ -50,6 +50,11 @@ window-rule {
 }
 
 window-rule {
+    match app-id=r#"(?i)^onlyoffice$"#
+    open-on-workspace "  "
+}
+
+window-rule {
     match app-id="AmneziaVPN"
     open-on-workspace "  "
     default-column-width { proportion 0.33333; }

@@ -1,12 +1,15 @@
 [audio]
 enable_overdrive = true
 
+[backdrop]
+enabled = true
+
 [bar.default]
 background_opacity = 0.8
 capsule = true
 center = [ "clock", "media" ]
 contact_shadow = true
-end = [ "tray", "notifications", "clipboard", "keyboard_layout", "network", "bluetooth", "volume", "brightness", "battery", "session" ]
+end = [ "tray", "group:g3", "group:g2", "group:g1", "keyboard_layout", "battery", "widget", "session" ]
 start = [ "workspaces" ]
 thickness = 35
 
@@ -14,6 +17,39 @@ thickness = 35
 
     [bar.default.monitor.HDMI-A-1]
     thickness = 30
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "volume", "brightness" ]
+    opacity = 1
+    padding = 5
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "network", "bluetooth" ]
+    opacity = 1
+    padding = 5
+
+    [[bar.default.capsule_group]]
+    accordion = false
+    accordion_direction = "end"
+    border_width = 1
+    enabled = true
+    fill = "surface_variant"
+    id = "g3"
+    members = [ "notifications", "clipboard" ]
+    opacity = 1
+    padding = 5
 
 [brightness]
 enable_ddcutil = true
@@ -178,11 +214,11 @@ widget_order = [
 compositor = "niri"
 
 [plugins]
-enabled = [ "kenn/keybind-cheatsheet" ]
+enabled = [ "kenn/keybind-cheatsheet", "yuuto/arch-updater" ]
 
 [shell]
 corner_radius_scale = 2
-font_family = "Ubuntu Nerd Font Med"
+font_family = "Ubuntu Nerd Font Propo Med"
 lang = "ru"
 niri_overview_type_to_launch_enabled = true
 panel_anchor_bar = "default"
@@ -192,7 +228,7 @@ settings_show_advanced = false
 
     [shell.launcher]
     app_grid = true
-    compact = true
+    compact = false
     show_app_actions = true
 
     [shell.panel]
@@ -265,7 +301,7 @@ transition_on_startup = true
     path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/swirls.jpg"
 
     [wallpaper.last]
-    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/i-touch-this.jpg"
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/voyager-21.jpg"
 
     [wallpaper.monitor.DP-1]
     directory = "/home/net_vlador/Pictures/walls-catppuccin-mocha"
@@ -274,10 +310,10 @@ transition_on_startup = true
     directory = "/home/net_vlador/Pictures/walls-catppuccin-mocha"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/i-touch-this.jpg"
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/voyager-21.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/dominik-mayer-1.jpg"
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/purple-horizon.jpg"
 
     [[wallpaper.favorite]]
     path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/swirls.jpg"
@@ -291,6 +327,9 @@ transition_on_startup = true
 [widget.media]
 hide_when_no_media = true
 show_progress = true
+
+[widget.widget]
+type = "yuuto/arch-updater:widget"
 
 [widget.workspaces]
 label_source = "name"

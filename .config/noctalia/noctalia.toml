@@ -1,0 +1,299 @@
+[audio]
+enable_overdrive = true
+
+[bar.default]
+background_opacity = 0.8
+capsule = true
+center = [ "clock", "media" ]
+contact_shadow = true
+end = [ "tray", "notifications", "clipboard", "keyboard_layout", "network", "bluetooth", "volume", "brightness", "battery", "session" ]
+start = [ "workspaces" ]
+thickness = 35
+
+    [bar.default.monitor.DP-1]
+
+    [bar.default.monitor.HDMI-A-1]
+    thickness = 30
+
+[brightness]
+enable_ddcutil = true
+minimum_brightness = 0.05
+
+[desktop_widgets]
+enabled = false
+
+[dock]
+active_monitor_only = true
+active_scale = 1.2
+background_opacity = 0.8
+cross_axis_padding = 10
+enabled = true
+icon_size = 35
+inactive_opacity = 1
+inactive_scale = 1
+item_spacing = 5
+magnification_scale = 1.3
+main_axis_padding = 30
+radius = 15
+reserve_space = false
+show_dots = true
+smart_auto_hide = true
+
+[location]
+address = "Perm"
+
+[lockscreen]
+fingerprint = false
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-login-box@DP-1",
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000004"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 8
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196
+    box_width = 810
+    cx = 1280
+    cy = 1258
+    output = "DP-1"
+    placement_height = 1440
+    placement_width = 2560
+    rotation = 0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.9
+        background_radius = 10
+        center_password_text = false
+        input_opacity = 1
+        input_radius = 5
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196
+    box_width = 810
+    cx = 540
+    cy = 1738
+    output = "HDMI-A-1"
+    placement_height = 1920
+    placement_width = 1080
+    rotation = 0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.9
+        background_radius = 10
+        center_password_text = false
+        input_opacity = 1
+        input_radius = 5
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 544
+    box_width = 672
+    cx = 1312
+    cy = 720
+    output = "DP-1"
+    placement_height = 1440
+    placement_width = 2560
+    rotation = 0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        background_color = "surface"
+        background_opacity = 1
+        background_padding = 0
+        background_radius = 30
+        center_text = true
+        circle = true
+        clock_style = "digital"
+        color = "on_surface"
+        font_family = "Adwaita Sans"
+        format = "{:%H:%M}"
+        shadow = true
+        timezone = ""
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 72
+    box_width = 184
+    cx = 972
+    cy = 1072
+    output = "DP-1"
+    placement_height = 1440
+    placement_width = 2560
+    rotation = 0
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 96
+    box_width = 600
+    cx = 1364
+    cy = 1064
+    output = "DP-1"
+    placement_height = 1440
+    placement_width = 2560
+    rotation = 0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = false
+        bands = 32
+        centered = false
+        mirrored = false
+        reversed = false
+        show_when_idle = true
+
+[plugin_settings."kenn/keybind-cheatsheet"]
+compositor = "niri"
+
+[plugins]
+enabled = [ "kenn/keybind-cheatsheet" ]
+
+[shell]
+corner_radius_scale = 2
+font_family = "Ubuntu Nerd Font Med"
+lang = "ru"
+niri_overview_type_to_launch_enabled = true
+panel_anchor_bar = "default"
+password_style = "random"
+polkit_agent = true
+settings_show_advanced = false
+
+    [shell.launcher]
+    app_grid = true
+    compact = true
+    show_app_actions = true
+
+    [shell.panel]
+    floating_offset = 10
+    open_near_click_clipboard = true
+    open_near_click_control_center = true
+    session_placement = "floating"
+    session_position = "center"
+    transparency_mode = "soft"
+    wallpaper_placement = "floating"
+    wallpaper_position = "center"
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0
+    enabled = true
+    shortcut = "1"
+    variant = "secondary"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0
+    enabled = true
+    shortcut = "2"
+    variant = "outline"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0
+    enabled = true
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+[theme]
+builtin = "Catppuccin"
+community_palette = "Oxocarbon"
+mode = "dark"
+source = "builtin"
+wallpaper_scheme = "m3-content"
+
+    [theme.templates]
+    builtin_ids = [ "gtk3", "gtk4", "niri", "qt" ]
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/home/net_vlador/Pictures/walls-catppuccin-mocha"
+fill_color = "primary"
+per_monitor_directories = true
+transition_on_startup = true
+
+    [wallpaper.automation]
+    enabled = true
+    interval_seconds = 60
+
+    [wallpaper.default]
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/swirls.jpg"
+
+    [wallpaper.last]
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/i-touch-this.jpg"
+
+    [wallpaper.monitor.DP-1]
+    directory = "/home/net_vlador/Pictures/walls-catppuccin-mocha"
+
+    [wallpaper.monitor.HDMI-A-1]
+    directory = "/home/net_vlador/Pictures/walls-catppuccin-mocha"
+
+    [wallpaper.monitors.DP-1]
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/i-touch-this.jpg"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/dominik-mayer-1.jpg"
+
+    [[wallpaper.favorite]]
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/swirls.jpg"
+
+    [[wallpaper.favorite]]
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/sword.jpg"
+
+    [[wallpaper.favorite]]
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/keyboard-2.png"
+
+[widget.media]
+hide_when_no_media = true
+show_progress = true
+
+[widget.workspaces]
+label_source = "name"
+max_label_chars = 3
+show_tooltip = false
+style = "minimal"

@@ -1,23 +1,23 @@
 binds {
     // ──  Noctalia ──────────────────────────
-    Mod+Shift+Slash hotkey-overlay-title="Показать шпаргалку по горячим клавишам" { spawn-sh "qs -c noctalia-shell ipc call plugin:keybind-cheatsheet toggle"; }
-    Mod+Shift+W hotkey-overlay-title="Переключить обои" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "wallpaper" "toggle"; }
-    Mod+Shift+Period hotkey-overlay-title="Открыть эмодзи-лаунчер" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "emoji"; }
-    Alt+Space hotkey-overlay-title="Открыть лаунчер" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-    Mod+N hotkey-overlay-title="Переключить историю уведомлений" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleHistory"; } 
-    Mod+Shift+N hotkey-overlay-title="Переключить режим Не беспокоить" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "toggleDND"; }
-    Mod+Ctrl+N hotkey-overlay-title="Очистить историю уведомлений" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "notifications" "clear"; }
-    Mod+Escape hotkey-overlay-title="Открыть центр управления" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "controlCenter" "toggle"; } 
-    Mod+Comma hotkey-overlay-title="Открыть настройки Noctalia" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "settings" "toggle"; }
-    Mod+Shift+Escape hotkey-overlay-title="Заблокировать экран" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "lockScreen" "lock"; }
-    Mod+Shift+M hotkey-overlay-title="Выключить микрофон" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteInput"; }
-    XF86AudioRaiseVolume hotkey-overlay-title="Увеличить громкость" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "increase"; }
-    XF86AudioLowerVolume hotkey-overlay-title="Уменьшить громкость" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "decrease"; }
-    XF86AudioMute hotkey-overlay-title="Выключить звук" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "volume" "muteOutput"; }
-    XF86MonBrightnessUp hotkey-overlay-title="Увеличить яркость" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "increase"; }
-    XF86MonBrightnessDown hotkey-overlay-title="Уменьшить яркость" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "brightness" "decrease"; }
-    Mod+V hotkey-overlay-title="Открыть буфер обмена" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
-    Ctrl+Alt+Delete hotkey-overlay-title="Открыть меню сессии" { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+    Mod+Shift+Slash hotkey-overlay-title="Показать шпаргалку по горячим клавишам" { spawn "noctalia" "msg" "panel-toggle" "kenn/keybind-cheatsheet:cheatsheet"; }
+    Mod+Shift+W hotkey-overlay-title="Переключить обои" { spawn "noctalia" "msg" "panel-toggle" "wallpaper"; }
+    Mod+Shift+Period hotkey-overlay-title="Открыть эмодзи-лаунчер" { spawn "noctalia" "msg" "panel-toggle" "launcher" "/emo"; }
+    Alt+Space hotkey-overlay-title="Открыть лаунчер" { spawn "noctalia" "msg" "panel-toggle" "launcher"; }
+    Mod+N hotkey-overlay-title="Открыть историю уведомлений" { spawn "noctalia" "msg" "panel-toggle" "control-center" "notifications"; }
+    Mod+Shift+N hotkey-overlay-title="Переключить режим Не беспокоить" { spawn "noctalia" "msg" "notification-dnd-toggle"; }
+    Mod+Ctrl+N hotkey-overlay-title="Очистить историю уведомлений" { spawn "noctalia" "msg" "notification-clear-history"; }
+    Mod+Escape hotkey-overlay-title="Открыть центр управления" { spawn "noctalia" "msg" "panel-toggle" "control-center"; }
+    Mod+Comma hotkey-overlay-title="Открыть настройки Noctalia" { spawn "noctalia" "msg" "settings-toggle"; }
+    Mod+Shift+Escape hotkey-overlay-title="Заблокировать экран" { spawn "noctalia" "msg" "session" "lock"; }
+    Mod+Shift+M hotkey-overlay-title="Выключить микрофон" { spawn "noctalia" "msg" "mic-mute"; }
+    XF86AudioRaiseVolume hotkey-overlay-title="Увеличить громкость" { spawn "noctalia" "msg" "volume-up"; }
+    XF86AudioLowerVolume hotkey-overlay-title="Уменьшить громкость" { spawn "noctalia" "msg" "volume-down"; }
+    XF86AudioMute hotkey-overlay-title="Выключить звук" { spawn "noctalia" "msg" "volume-mute"; }
+    XF86MonBrightnessUp hotkey-overlay-title="Увеличить яркость" { spawn "noctalia" "msg" "brightness-up"; }
+    XF86MonBrightnessDown hotkey-overlay-title="Уменьшить яркость" { spawn "noctalia" "msg" "brightness-down"; }
+    Mod+V hotkey-overlay-title="Открыть буфер обмена" { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
+    Ctrl+Alt+Delete hotkey-overlay-title="Открыть меню сессии" { spawn "noctalia" "msg" "panel-toggle" "session"; }
 
     // ──  Launch ────────────────────────────
     Mod+T hotkey-overlay-title="Открыть терминал: Kitty" { spawn "kitty"; }
@@ -105,7 +105,7 @@ binds {
     Mod+2 hotkey-overlay-title="Фокус на рабочую область 2" { focus-workspace 2; }
     Mod+3 hotkey-overlay-title="Фокус на рабочую область 3" { focus-workspace 3; }
     Mod+4 hotkey-overlay-title="Фокус на рабочую область 4" { focus-workspace 4; }
-    Mod+5 hotkey-overlay-title="Фокус на рабочую область 5" { focus-workspace 5; }
+    Mod+5 hotkey-overlay-title="Фокус на рабочую область настроек" { focus-workspace "  "; }
     Mod+6 hotkey-overlay-title="Фокус на рабочую область 6" { focus-workspace 6; }
     Mod+7 hotkey-overlay-title="Фокус на рабочую область 7" { focus-workspace 7; }
     Mod+8 hotkey-overlay-title="Фокус на рабочую область 8" { focus-workspace 8; }
@@ -114,7 +114,7 @@ binds {
     Mod+Shift+2 hotkey-overlay-title="Переместить колонку на рабочую область 2" { move-column-to-workspace 2; }
     Mod+Shift+3 hotkey-overlay-title="Переместить колонку на рабочую область 3" { move-column-to-workspace 3; }
     Mod+Shift+4 hotkey-overlay-title="Переместить колонку на рабочую область 4" { move-column-to-workspace 4; }
-    Mod+Shift+5 hotkey-overlay-title="Переместить колонку на рабочую область 5" { move-column-to-workspace 5; }
+    Mod+Shift+5 hotkey-overlay-title="Переместить колонку на рабочую область настроек" { move-column-to-workspace "  "; }
     Mod+Shift+6 hotkey-overlay-title="Переместить колонку на рабочую область 6" { move-column-to-workspace 6; }
     Mod+Shift+7 hotkey-overlay-title="Переместить колонку на рабочую область 7" { move-column-to-workspace 7; }
     Mod+Shift+8 hotkey-overlay-title="Переместить колонку на рабочую область 8" { move-column-to-workspace 8; }

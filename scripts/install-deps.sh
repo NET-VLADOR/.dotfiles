@@ -43,7 +43,7 @@ PACMAN_PACKAGES=(
     # Fonts
     ttf-jetbrains-mono-nerd ttf-ubuntu-nerd
     # Icons
-    papirus-icon-theme
+    papirus-icon-theme gsettings-desktop-schemas
 )
 
 AUR_PACKAGES=(
@@ -91,6 +91,18 @@ if command -v yay &>/dev/null; then
 else
     warn "yay not found — skipping AUR packages"
     warn "Install yay: sudo pacman -S --needed git base-devel && git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si"
+fi
+
+# ──  Icon theme ───────────────────────────
+info "Icon theme…"
+if $DRY_RUN; then
+    run gsettings set org.gnome.desktop.interface icon-theme Papirus
+elif command -v gsettings &>/dev/null \
+    && [[ -n "${DBUS_SESSION_BUS_ADDRESS:-}" ]] \
+    && gsettings list-schemas | grep -Fxq org.gnome.desktop.interface; then
+    run gsettings set org.gnome.desktop.interface icon-theme Papirus
+else
+    warn "No active GSettings session — set later with: gsettings set org.gnome.desktop.interface icon-theme Papirus"
 fi
 
 # ──  Neovim — check version ──────────────

@@ -7,11 +7,18 @@ enabled = true
 [bar.default]
 background_opacity = 0.8
 capsule = true
-center = [ "clock", "media" ]
+capsule_thickness = 0.8
+center = [ "media", "clock" ]
 contact_shadow = true
-end = [ "tray", "group:g3", "group:g2", "group:g1", "keyboard_layout", "battery", "widget", "session" ]
-start = [ "workspaces" ]
-thickness = 35
+end = [ "tray", "group:g1" ]
+font_family = "Ubuntu Nerd Font Propo Med"
+margin_ends = 10
+padding = 10
+panel_overlap = 0
+radius = 50
+start = [ "group:g2", "workspaces", "active_window" ]
+thickness = 30
+widget_spacing = 5
 
     [bar.default.monitor.DP-1]
 
@@ -25,9 +32,9 @@ thickness = 35
     enabled = true
     fill = "surface_variant"
     id = "g1"
-    members = [ "volume", "brightness" ]
+    members = [ "keyboard_layout", "network", "bluetooth", "notifications", "volume", "brightness", "battery", "widget", "bar" ]
     opacity = 1
-    padding = 5
+    padding = 10
 
     [[bar.default.capsule_group]]
     accordion = false
@@ -36,18 +43,7 @@ thickness = 35
     enabled = true
     fill = "surface_variant"
     id = "g2"
-    members = [ "network", "bluetooth" ]
-    opacity = 1
-    padding = 5
-
-    [[bar.default.capsule_group]]
-    accordion = false
-    accordion_direction = "end"
-    border_width = 1
-    enabled = true
-    fill = "surface_variant"
-    id = "g3"
-    members = [ "notifications", "clipboard" ]
+    members = [ "cpu", "temp", "sysmon", "ram" ]
     opacity = 1
     padding = 5
 
@@ -55,25 +51,53 @@ thickness = 35
 enable_ddcutil = true
 minimum_brightness = 0.05
 
+[control_center]
+sidebar_section = "none"
+width = 760
+
 [desktop_widgets]
 enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
 
 [dock]
 active_monitor_only = true
-active_scale = 1.2
+active_scale = 1.1
 background_opacity = 0.8
-cross_axis_padding = 10
+cross_axis_padding = 5
 enabled = true
 icon_size = 35
 inactive_opacity = 1
 inactive_scale = 1
 item_spacing = 5
-magnification_scale = 1.3
+launcher_icon = "brand-windows-filled"
+launcher_position = "start"
+magnification_scale = 1.2
 main_axis_padding = 30
 radius = 15
 reserve_space = false
 show_dots = true
 smart_auto_hide = true
+
+[idle]
+behavior_order = [ "lock", "screen-off" ]
+
+    [idle.behavior.lock]
+    action = "screen_off"
+    enabled = true
+    timeout = 300
+
+    [idle.behavior.screen-off]
+    action = "lock"
+    enabled = true
+    timeout = 360
 
 [location]
 address = "Perm"
@@ -210,11 +234,26 @@ widget_order = [
         reversed = false
         show_when_idle = true
 
+[osd]
+background_opacity = 0.9
+follow_focused_output = true
+offset_y = 10
+orientation = "vertical"
+position = "top_right"
+position_vertical = "top_right"
+
+[plugin_settings."andrewdems/vpn-manager"]
+panel_placement = "floating"
+
 [plugin_settings."kenn/keybind-cheatsheet"]
 compositor = "niri"
 
+[plugin_settings."yuuto/arch-updater"]
+auto_check_hours = 6
+panel_placement = "floating"
+
 [plugins]
-enabled = [ "kenn/keybind-cheatsheet", "yuuto/arch-updater" ]
+enabled = [ "kenn/keybind-cheatsheet", "yuuto/arch-updater", "andrewdems/vpn-manager" ]
 
 [shell]
 corner_radius_scale = 2
@@ -224,15 +263,35 @@ niri_overview_type_to_launch_enabled = true
 panel_anchor_bar = "default"
 password_style = "random"
 polkit_agent = true
-settings_show_advanced = false
+settings_expand_all_groups = true
+settings_show_advanced = true
 
     [shell.launcher]
     app_grid = true
+    category_icons_only = true
     compact = false
+    default_view = "all"
+    search_position = "top"
     show_app_actions = true
+    show_session_button = false
+    show_settings_button = false
+
+        [shell.launcher.providers.emoji]
+        global = true
+
+        [shell.launcher.providers.panels]
+        global = true
+
+        [shell.launcher.providers.session]
+        global = false
+
+        [shell.launcher.providers.wallpaper]
+        global = false
 
     [shell.panel]
+    control_center_placement = "floating"
     floating_offset = 10
+    list_item_background = true
     open_near_click_clipboard = true
     open_near_click_control_center = true
     session_placement = "floating"
@@ -241,40 +300,43 @@ settings_show_advanced = false
     wallpaper_placement = "floating"
     wallpaper_position = "center"
 
-    [[shell.session.actions]]
-    action = "lock"
-    countdown_seconds = 0
-    enabled = true
-    shortcut = "1"
-    variant = "secondary"
+    [shell.session]
+    grid = true
 
-    [[shell.session.actions]]
-    action = "logout"
-    countdown_seconds = 0
-    enabled = true
-    shortcut = "2"
-    variant = "outline"
+        [[shell.session.actions]]
+        action = "lock"
+        countdown_seconds = 0
+        enabled = true
+        shortcut = "1"
+        variant = "secondary"
 
-    [[shell.session.actions]]
-    action = "lock_and_suspend"
-    countdown_seconds = 0
-    enabled = true
-    shortcut = "3"
-    variant = "default"
+        [[shell.session.actions]]
+        action = "logout"
+        countdown_seconds = 0
+        enabled = true
+        shortcut = "2"
+        variant = "outline"
 
-    [[shell.session.actions]]
-    action = "reboot"
-    countdown_seconds = 0
-    enabled = true
-    shortcut = "4"
-    variant = "default"
+        [[shell.session.actions]]
+        action = "lock_and_suspend"
+        countdown_seconds = 0
+        enabled = true
+        shortcut = "3"
+        variant = "default"
 
-    [[shell.session.actions]]
-    action = "shutdown"
-    countdown_seconds = 0
-    enabled = true
-    shortcut = "5"
-    variant = "destructive"
+        [[shell.session.actions]]
+        action = "reboot"
+        countdown_seconds = 5
+        enabled = true
+        shortcut = "4"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "shutdown"
+        countdown_seconds = 5
+        enabled = true
+        shortcut = "5"
+        variant = "destructive"
 
 [theme]
 builtin = "Catppuccin"
@@ -284,8 +346,9 @@ source = "builtin"
 wallpaper_scheme = "m3-content"
 
     [theme.templates]
-    builtin_ids = [ "gtk3", "gtk4", "niri", "qt" ]
-    enable_community_templates = false
+    builtin_ids = [ "gtk3", "gtk4", "kcolorscheme", "niri", "qt" ]
+    community_ids = [ "zen-browser" ]
+    enable_community_templates = true
 
 [wallpaper]
 directory = "/home/net_vlador/Pictures/walls-catppuccin-mocha"
@@ -301,7 +364,7 @@ transition_on_startup = true
     path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/swirls.jpg"
 
     [wallpaper.last]
-    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/voyager-21.jpg"
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/toast.png"
 
     [wallpaper.monitor.DP-1]
     directory = "/home/net_vlador/Pictures/walls-catppuccin-mocha"
@@ -310,10 +373,10 @@ transition_on_startup = true
     directory = "/home/net_vlador/Pictures/walls-catppuccin-mocha"
 
     [wallpaper.monitors.DP-1]
-    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/voyager-21.jpg"
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/toast.png"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/purple-horizon.jpg"
+    path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/diner-lonely-road.jpg"
 
     [[wallpaper.favorite]]
     path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/swirls.jpg"
@@ -324,9 +387,50 @@ transition_on_startup = true
     [[wallpaper.favorite]]
     path = "/home/net_vlador/Pictures/walls-catppuccin-mocha/keyboard-2.png"
 
+[widget.bar]
+type = "andrewdems/vpn-manager:bar"
+
+[widget.brightness]
+show_label = false
+
+[widget.clock]
+capsule = false
+format = "{:%d %B %Y, %H:%M}"
+
+[widget.cpu]
+show_value = false
+
+[widget.keyboard_layout]
+show_glyph = false
+
 [widget.media]
 hide_when_no_media = true
 show_progress = true
+
+[widget.network]
+show_label = false
+
+[widget.notifications]
+hide_when_no_unread = true
+
+[widget.ram]
+interactive = false
+show_tooltip = false
+show_value = false
+
+[widget.sysmon]
+interactive = false
+show_tooltip = false
+show_value = false
+
+[widget.temp]
+interactive = false
+show_tooltip = false
+show_value = false
+stat = "gpu_temp"
+
+[widget.volume]
+show_label = false
 
 [widget.widget]
 type = "yuuto/arch-updater:widget"

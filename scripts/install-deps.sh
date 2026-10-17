@@ -31,7 +31,7 @@ PACMAN_PACKAGES=(
     # System
     git stow base-devel keyd
     # WM & terminal
-    niri kitty
+    niri noctalia kitty
     # Shell
     zsh
     # Editor
@@ -42,11 +42,12 @@ PACMAN_PACKAGES=(
     wl-clipboard cliphist brightnessctl wireplumber playerctl
     # Fonts
     ttf-jetbrains-mono-nerd ttf-ubuntu-nerd
+    # Icons
+    papirus-icon-theme
 )
 
 AUR_PACKAGES=(
     catppuccin-cursors-mocha
-    noctalia-shell
     zen-browser-bin
     herdr-bin
 )

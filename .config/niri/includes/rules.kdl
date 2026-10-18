@@ -13,6 +13,7 @@ window-rule {
 }
 
 window-rule {
+    open-on-workspace " 󰇘 "
     geometry-corner-radius 10
     clip-to-geometry true
     open-focused true
@@ -32,6 +33,7 @@ window-rule {
 }
 
 window-rule {
+    match app-id="codium"
     match app-id="kitty"
     open-on-workspace "  "
 }

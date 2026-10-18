@@ -1,0 +1,13 @@
+{
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.activityBar.location": "top",
+    "window.menuBarVisibility": "compact",
+    "workbench.browser.showInTitleBar": true,
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.formatOnSave": true,
+    "editor.fontFamily": "'JetBrainsMono NF', monospace",
+    "editor.fontLigatures": true,
+    "window.density.editorTabHeight": "compact"
+}

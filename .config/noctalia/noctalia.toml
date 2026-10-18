@@ -404,8 +404,11 @@ show_value = false
 show_glyph = false
 
 [widget.media]
+artist_first = true
 hide_when_no_media = true
+rotate_album_art = true
 show_progress = true
+title_scroll = "on_hover"
 
 [widget.network]
 show_label = false
@@ -422,6 +425,7 @@ show_value = false
 interactive = false
 show_tooltip = false
 show_value = false
+stat = "cpu_temp"
 
 [widget.temp]
 interactive = false

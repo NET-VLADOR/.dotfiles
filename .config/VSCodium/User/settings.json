@@ -1,13 +1,42 @@
 {
-    "workbench.colorTheme": "Catppuccin Mocha",
-    "workbench.iconTheme": "catppuccin-mocha",
-    "workbench.activityBar.location": "top",
-    "window.menuBarVisibility": "compact",
-    "workbench.browser.showInTitleBar": true,
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.formatOnSave": true,
-    "editor.fontFamily": "'JetBrainsMono NF', monospace",
-    "editor.fontLigatures": true,
-    "window.density.editorTabHeight": "compact"
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
+  "workbench.activityBar.location": "top",
+  "workbench.browser.showInTitleBar": true,
+  "workbench.notifications.position": "top-right",
+  "workbench.browser.searchEngine": "duckduckgo",
+  "workbench.panel.showLabels": false,
+  "workbench.browser.openLocalhostLinks": true,
+
+  "diffEditor.hideUnchangedRegions.enabled": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  "editor.formatOnSave": true,
+  "editor.fontFamily": "'JetBrainsMono NF', monospace",
+  "editor.fontLigatures": true,
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.cursorBlinking": "expand",
+  "editor.cursorStyle": "line-thin",
+  "editor.smoothScrolling": true,
+
+  "window.density.editorTabHeight": "compact",
+  "window.menuBarVisibility": "compact",
+  "window.zoomLevel": 1.25,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "prettier.trailingComma": "all",
+  "prettier.printWidth": 120,
+  "prettier.endOfLine": "lf",
+
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.timeout": 200,
+  "json.schemaDownload.trustedDomains": {
+    "https://raw.githubusercontent.com": true
+  }
 }
